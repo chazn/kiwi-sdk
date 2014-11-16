@@ -2,20 +2,71 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kiwihackathon.com.samplekiwiapp" >
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/fcts"
+        android:label="FCTS"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name="kiwihackathon.com.samplekiwiapp.MyActivity"
-            android:label="@string/app_name" >
+
+        <activity android:name="kiwihackathon.com.samplekiwiapp.Splash"
+            android:label="FCTS">
             <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            </activity>
+
+        <activity
+            android:name=".Menu"
+            android:label="FCTS" >
+            <intent-filter>
+
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="kiwihackathon.com.samplekiwiapp.WearSender"
+            android:label="FCTS">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            </activity>
+        <activity android:name=".MyActivity"
+            android:label="FCTS">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+            </activity>
+
+        <activity android:name=".ReviewTechnique"
+            android:label="FCTS">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            </activity>
+
+        <activity android:name=".Video"
+            android:label="FCTS"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            </activity>
+
+        <activity android:name=".Fighter"
+            android:label="FCTS"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+
 
         <receiver android:name=".ActionReceiver">
             <intent-filter>
@@ -23,6 +74,15 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </receiver>
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service android:name=".wearService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
     </application>
+
 
 </manifest>

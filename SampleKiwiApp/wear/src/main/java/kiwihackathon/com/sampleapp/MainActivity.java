@@ -1,9 +1,11 @@
-package fcts.sports.ming.myapplication;
+package kiwihackathon.com.sampleapp;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.widget.TextView;
+
+import kiwihackathon.com.samplekiwiapp.R;
 
 public class MainActivity extends Activity {
 
